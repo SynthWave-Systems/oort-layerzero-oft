@@ -97,7 +97,7 @@ task('lz:oft:send', 'Send tokens cross-chain using LayerZero technology')
             console.log(
                 `Tokens sent successfully to the recipient on the destination chain. View on LayerZero Scan: https://testnet.layerzeroscan.com/tx/${tx.hash}`
             )
-        } catch (error) {
+        } catch (error: any) {
             console.error('Error during quoteSend or send operation:', error)
             if (error?.data) {
                 console.error("Reverted with data:", error.data)

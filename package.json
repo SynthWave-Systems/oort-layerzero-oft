@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
+    "@layerzerolabs/devtools-evm": "~1.0.6",
     "@layerzerolabs/devtools-evm-hardhat": "^2.0.4",
     "@layerzerolabs/eslint-config-next": "~2.3.39",
     "@layerzerolabs/lz-definitions": "^3.0.27",

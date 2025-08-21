@@ -29,7 +29,7 @@ const accounts: HttpNetworkAccountsUserConfig | undefined = MNEMONIC
     ? { mnemonic: MNEMONIC }
     : PRIVATE_KEY
       ? [PRIVATE_KEY]
-      : undefined
+      : []
 
 if (accounts == null) {
     console.warn(
@@ -58,27 +58,38 @@ const config: HardhatUserConfig = {
         'ethereum-mainnet': {
             eid: EndpointId.ETHEREUM_V2_MAINNET,
             url: process.env.RPC_URL_MAINNET || '',
-            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [""],
+            accounts,
         },
         'bsc-mainnet': {
             eid: EndpointId.BSC_V2_MAINNET,
             url: process.env.RPC_URL_BSC || '',
-            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [""],
+            accounts,
         },
+        // Note: Vana mainnet endpoint will be added when available in LayerZero definitions
+        // 'vana-mainnet': {
+        //     eid: EndpointId.VANA_V2_MAINNET, // To be defined when available (estimated: 30298)
+        //     url: process.env.RPC_URL_VANA_MAINNET || 'https://rpc.vana.org',
+        //     accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [""],
+        // },
         'sepolia-testnet': {
             eid: EndpointId.SEPOLIA_V2_TESTNET,
             url: process.env.RPC_URL_SEPOLIA || '',
-            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [""],
+            accounts,
         },
         'bsc-testnet': {
             eid: EndpointId.BSC_V2_TESTNET,
             url: process.env.RPC_URL_BSC || 'https://data-seed-prebsc-2-s1.bnbchain.org:8545',
-            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [""],
+            accounts,
         },
         'amoy-testnet': {
             eid: EndpointId.AMOY_V2_TESTNET,
             url: process.env.RPC_URL_AMOY || '',
-            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [""],
+            accounts,
+        },
+        'vana-testnet': {
+            eid: EndpointId.VANAR_V2_TESTNET,
+            url: process.env.RPC_URL_VANA_TESTNET || 'https://rpc.satori.vana.org',
+            accounts,
         },
         hardhat: {
             // Need this for testing because TestHelperOz5.sol is exceeding the compiled contract size limit

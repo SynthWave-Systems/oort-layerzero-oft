@@ -29,7 +29,7 @@ const networkConfigs = {
         endpointAddress: '0x6EDCE65403992e310A62460808c4b910D972f10f', // Standard testnet endpoint
     },
     'vana-testnet': {
-        tokenAddress: '0x0000000000000000000000000000000000000000', // Placeholder - to be updated with Vana token
+        tokenAddress: process.env.VANA_TOKEN_ADDRESS || '0x0000000000000000000000000000000000000000', // Must be set for deployment
         endpointAddress: '0x6EDCE65403992e310A62460808c4b910D972f10f', // Standard testnet endpoint (to be confirmed)
     },
     // Note: Add vana-mainnet when LayerZero endpoint becomes available
@@ -52,6 +52,13 @@ const deploy: DeployFunction = async (hre) => {
 
     console.log(`Using token address: ${networkConfig.tokenAddress}`)
     console.log(`Using endpoint address: ${networkConfig.endpointAddress}`)
+
+    // Validate token address is set
+    if (networkConfig.tokenAddress === '0x0000000000000000000000000000000000000000') {
+        console.warn(`⚠️  WARNING: Token address not set for ${hre.network.name}!`)
+        console.warn(`   Please set the appropriate token address in the deployment configuration`)
+        console.warn(`   or set the VANA_TOKEN_ADDRESS environment variable for Vana networks.`)
+    }
 
     // Try to get LayerZero endpoint from SDK (fallback to manual config)
     let endpointAddress = networkConfig.endpointAddress

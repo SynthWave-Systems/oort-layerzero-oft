@@ -28,15 +28,10 @@ const networkConfigs = {
         tokenAddress: '0x0000000000000000000000000000000000000000', // Placeholder - to be updated
         endpointAddress: '0x6EDCE65403992e310A62460808c4b910D972f10f', // Standard testnet endpoint
     },
-    'vana-testnet': {
+    'vana-mainnet': {
         tokenAddress: process.env.VANA_TOKEN_ADDRESS || '0x0000000000000000000000000000000000000000', // Must be set for deployment
-        endpointAddress: '0x6EDCE65403992e310A62460808c4b910D972f10f', // Standard testnet endpoint (to be confirmed)
-    },
-    // Note: Add vana-mainnet when LayerZero endpoint becomes available
-    // 'vana-mainnet': {
-    //     tokenAddress: '0x0000000000000000000000000000000000000000', // To be updated with Vana mainnet token
-    //     endpointAddress: '0x1a44076050125825900e736c501f859c50fE728c', // Standard mainnet endpoint (to be confirmed)
-    // }
+        endpointAddress: '0x1a44076050125825900e736c501f859c50fE728c', // Standard mainnet endpoint (to be confirmed)
+    }
 }
 
 const deploy: DeployFunction = async (hre) => {

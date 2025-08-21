@@ -86,6 +86,9 @@ const config: HardhatUserConfig = {
             url: process.env.RPC_URL_AMOY || '',
             accounts,
         },
+        // Vana Network Configuration
+        // Note: Currently using VANAR_V2_TESTNET endpoint (40298) from LayerZero definitions
+        // Verify this matches your deployment requirements (testnet vs mainnet)
         'vana-testnet': {
             eid: EndpointId.VANAR_V2_TESTNET,
             url: process.env.RPC_URL_VANA_TESTNET || 'https://rpc.satori.vana.org',

@@ -6,11 +6,14 @@
 
 This LayerZero OFT now supports the **Vana Network**, enabling omnichain token transfers between Vana and existing supported networks.
 
+⚠️ **Configuration Note**: The current setup uses available LayerZero endpoints. Please verify the network configuration matches your deployment requirements (testnet vs mainnet).
+
 ### Supported Networks
 - **Mainnets**: Ethereum, BSC
-- **Testnets**: Sepolia, BSC Testnet, Polygon Amoy, **Vana Satori Testnet** ⭐
+- **Testnets**: Sepolia, BSC Testnet, Polygon Amoy
+- **Vana Network**: Configured using available LayerZero endpoint `VANAR_V2_TESTNET` (40298)
 
-For detailed Vana integration information, see [VANA_INTEGRATION.md](./VANA_INTEGRATION.md)
+For detailed Vana integration information and configuration guidance, see [VANA_INTEGRATION.md](./VANA_INTEGRATION.md)
 
 ## Cross-chain Transaction Examples
 
@@ -22,18 +25,22 @@ Recipient Transaction: https://testnet.bscscan.com/tx/0xbc2e6fcb09ab05722b0cc6e5
 
 ## Quick Start for Vana Network
 
+⚠️ **Important**: Verify network configuration before deployment. Current setup uses LayerZero endpoint `VANAR_V2_TESTNET` (40298).
+
 1. Set up environment variables:
 ```bash
 cp .env.example .env
 # Edit .env and set PRIVATE_KEY and VANA_TOKEN_ADDRESS
 ```
 
-2. Deploy to Vana testnet:
+2. Deploy to Vana network:
 ```bash
 npx hardhat deploy --network vana-testnet
 ```
 
-3. Configure cross-chain connections using the testnet configuration:
+3. Configure cross-chain connections using the configuration:
 ```bash
 npx hardhat lz:oapp:wire --oapp-config oft_config_testnet.ts
 ```
+
+For detailed setup and configuration guidance, see [VANA_INTEGRATION.md](./VANA_INTEGRATION.md)

@@ -1,5 +1,9 @@
 import { EndpointId } from "@layerzerolabs/lz-definitions";
 
+// OFT Configuration for Testnet Networks
+// Note: Vana is configured using VANAR_V2_TESTNET endpoint (40298)
+// Verify this matches your deployment requirements
+
 const sepolia_testnetContract = {
     eid: EndpointId.SEPOLIA_V2_TESTNET,
     contractName: "OORTOFTUpgradeable"
@@ -15,6 +19,8 @@ const amoy_testnetContract = {
     contractName: "OORTOFTUpgradeable"
 };
 
+// Vana Network Contract
+// Using available LayerZero endpoint - verify network type requirements
 const vana_testnetContract = {
     eid: EndpointId.VANAR_V2_TESTNET,
     contractName: "OORTOFTUpgradeable"

@@ -14,7 +14,7 @@ const ethereum_mainnetContract = {
 };
 
 // Vana Network Contract  
-// Note: Using VANAR_V2_TESTNET endpoint (40298) which represents Vana's mainnet
+// Note: Using Vana Mainnet endpoint (40298) for production network
 const vana_mainnetContract = {
     eid: EndpointId.VANAR_V2_TESTNET,
     contractName: "OORTOFTUpgradeable"

@@ -88,7 +88,7 @@ const config: HardhatUserConfig = {
         },
         // Vana Network Configuration  
         // Note: Vana is mainnet-only on LayerZero (no testnet available)
-        // Using VANAR_V2_TESTNET endpoint (40298) which represents Vana's mainnet
+        // Using Vana Mainnet endpoint (40298) for production network
         'vana-mainnet': {
             eid: EndpointId.VANAR_V2_TESTNET,
             url: process.env.RPC_URL_VANA_MAINNET || 'https://rpc.satori.vana.org',

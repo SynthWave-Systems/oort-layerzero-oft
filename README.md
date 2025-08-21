@@ -24,7 +24,7 @@ Recipient Transaction: https://testnet.bscscan.com/tx/0xbc2e6fcb09ab05722b0cc6e5
 
 ## Quick Start for Vana Network
 
-✅ **Network Status**: Vana is mainnet-only on LayerZero. Uses endpoint `VANAR_V2_TESTNET` (40298) which represents Vana's mainnet.
+✅ **Network Status**: Vana is mainnet-only on LayerZero. Uses Vana Mainnet endpoint (40298) for production network.
 
 1. Set up environment variables:
 ```bash

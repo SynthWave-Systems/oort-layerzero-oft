@@ -34,16 +34,16 @@ This repository now supports deploying the OORT LayerZero OFT to the Vana networ
 ✅ **Important Note**: Vana is a mainnet-only network on LayerZero. There is no testnet available for Vana.
 
 ### Available Endpoints in LayerZero Definitions
-- **VANAR_V2_TESTNET**: `40298` - This endpoint ID represents Vana's mainnet despite the "testnet" naming in LayerZero definitions
-- **VANAR_TESTNET**: `10298` - Legacy V1 endpoint
+- **Vana Mainnet Endpoint**: `40298` - Production network endpoint for Vana
+- **VANAR_TESTNET**: `10298` - Legacy V1 endpoint (deprecated)
 
 ### Current Configuration
 The repository is configured to use:
 - **Network Name**: `vana-mainnet`
-- **LayerZero Endpoint ID**: `40298` (VANAR_V2_TESTNET - represents Vana mainnet)
+- **LayerZero Endpoint ID**: `40298` (Vana Mainnet - production network)
 - **RPC URL**: `https://rpc.satori.vana.org`
 
-📝 **Configuration Note**: Despite the endpoint being named "VANAR_V2_TESTNET" in LayerZero definitions, this is Vana's mainnet network as confirmed by LayerZero documentation.
+📝 **Configuration Note**: This endpoint connects to Vana's production mainnet network for omnichain operations.
 
 ## Environment Setup
 
@@ -95,7 +95,7 @@ npx hardhat lz:oft:send \
 ## Important Notes
 
 1. **Mainnet-Only Network**: Vana is a mainnet-only network on LayerZero - no testnet is available
-2. **Endpoint Validation**: Uses `VANAR_V2_TESTNET` (40298) endpoint which represents Vana's mainnet despite the naming
+2. **Endpoint Validation**: Uses Vana Mainnet endpoint (40298) for production network operations
 3. **Token Address**: Update the token address in `deploy/DeployAdapter.ts` and environment variables for Vana network deployment
 4. **LayerZero Endpoint**: Verify that LayerZero V2 endpoint is properly deployed on Vana network
 5. **DVN Configuration**: Update DVN (Decentralized Verifier Network) addresses in OFT configuration when Vana-specific DVNs are available

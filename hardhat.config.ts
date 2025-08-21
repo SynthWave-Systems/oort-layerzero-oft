@@ -65,12 +65,6 @@ const config: HardhatUserConfig = {
             url: process.env.RPC_URL_BSC || '',
             accounts,
         },
-        // Note: Vana mainnet endpoint will be added when available in LayerZero definitions
-        // 'vana-mainnet': {
-        //     eid: EndpointId.VANA_V2_MAINNET, // To be defined when available (estimated: 30298)
-        //     url: process.env.RPC_URL_VANA_MAINNET || 'https://rpc.vana.org',
-        //     accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [""],
-        // },
         'sepolia-testnet': {
             eid: EndpointId.SEPOLIA_V2_TESTNET,
             url: process.env.RPC_URL_SEPOLIA || '',
@@ -90,7 +84,7 @@ const config: HardhatUserConfig = {
         // Note: Vana is mainnet-only on LayerZero (no testnet available)
         // Using Vana Mainnet endpoint (40298) for production network
         'vana-mainnet': {
-            eid: EndpointId.VANAR_V2_TESTNET,
+            eid: EndpointId.VANA_V2_TESTNET,
             url: process.env.RPC_URL_VANA_MAINNET || 'https://rpc.satori.vana.org',
             accounts,
         },

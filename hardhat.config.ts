@@ -12,6 +12,7 @@ import '@nomiclabs/hardhat-ethers'
 import '@layerzerolabs/toolbox-hardhat'
 import { HardhatUserConfig, HttpNetworkAccountsUserConfig } from 'hardhat/types'
 import './tasks/sendOFT'
+import './tasks/vana-simulation'
 import "@openzeppelin/hardhat-upgrades";
 
 import { EndpointId } from '@layerzerolabs/lz-definitions'
@@ -81,10 +82,10 @@ const config: HardhatUserConfig = {
             accounts,
         },
         // Vana Network Configuration  
-        // Note: Vana is mainnet-only on LayerZero (no testnet available)
-        // Using Vana Mainnet endpoint (40298) for production network
+        // Note: Vana network uses VANAR LayerZero endpoint ID (40298)
+        // This is for simulation purposes - actual deployment should use proper Vana mainnet
         'vana-mainnet': {
-            eid: EndpointId.VANA_V2_TESTNET,
+            eid: EndpointId.VANAR_V2_TESTNET, // Using VANAR endpoint (40298) for Vana simulation
             url: process.env.RPC_URL_VANA_MAINNET || 'https://rpc.satori.vana.org',
             accounts,
         },

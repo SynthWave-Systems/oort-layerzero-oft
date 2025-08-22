@@ -14,6 +14,30 @@ This LayerZero OFT now supports the **Vana Network**, enabling omnichain token t
 
 For detailed Vana integration information and configuration guidance, see [VANA_INTEGRATION.md](./VANA_INTEGRATION.md)
 
+## 🎯 Vana Network Simulation
+
+Since Vana doesn't have a testnet endpoint on LayerZero, we've created a comprehensive **deployment simulation** that allows you to test the OFT Upgradeable contract deployment and transactions without actual deployment.
+
+### Quick Simulation Commands
+
+```bash
+# View Vana network configuration
+npx hardhat vana:info
+
+# Run complete deployment simulation
+npx hardhat vana:simulate
+```
+
+The simulation includes:
+- ✅ UUPS proxy deployment simulation
+- ✅ Contract interaction simulation  
+- ✅ Cross-chain transaction simulation
+- ✅ Upgrade mechanism simulation
+- ✅ Comprehensive gas estimation
+- ✅ Real deployment checklist
+
+For detailed simulation documentation, see [docs/VANA_SIMULATION.md](./docs/VANA_SIMULATION.md)
+
 ## Cross-chain Transaction Examples
 
 https://testnet.layerzeroscan.com/tx/0x36c6378087e5c621e181d41ab7e6df8bc41ed46a37a38cc629928b3ace272192
@@ -24,7 +48,19 @@ Recipient Transaction: https://testnet.bscscan.com/tx/0xbc2e6fcb09ab05722b0cc6e5
 
 ## Quick Start for Vana Network
 
-✅ **Network Status**: Vana is mainnet-only on LayerZero. Uses Vana Mainnet endpoint (40298) for production network.
+✅ **Network Status**: Vana is mainnet-only on LayerZero. Uses VANAR endpoint (40298) for simulation and deployment.
+
+### Option 1: Run Simulation (Recommended for Testing)
+
+```bash
+# Install dependencies
+yarn install
+
+# Run simulation to test deployment without actual deployment
+npx hardhat vana:simulate
+```
+
+### Option 2: Real Deployment (Mainnet Only)
 
 1. Set up environment variables:
 ```bash

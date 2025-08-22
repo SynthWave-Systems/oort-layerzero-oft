@@ -16,7 +16,8 @@
     "test:forge": "forge test",
     "test:hardhat": "hardhat test",
     "vana:info": "hardhat vana:info",
-    "vana:simulate": "hardhat vana:simulate"
+    "vana:simulate": "hardhat vana:simulate",
+    "vana:fork": "hardhat vana:fork --network vana-fork"
   },
   "resolutions": {
     "ethers": "^5.7.2",

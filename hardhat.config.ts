@@ -89,6 +89,18 @@ const config: HardhatUserConfig = {
             url: process.env.RPC_URL_VANA_MAINNET || 'https://rpc.satori.vana.org',
             accounts,
         },
+        // Vana Network Fork Configuration
+        // This creates a local fork of Vana mainnet for realistic testing without gas costs
+        'vana-fork': {
+            eid: EndpointId.VANAR_V2_TESTNET, // Using VANAR endpoint (40298) for Vana simulation
+            url: 'http://127.0.0.1:8545', // Local hardhat fork
+            accounts,
+            forking: {
+                url: process.env.RPC_URL_VANA_MAINNET || 'https://rpc.satori.vana.org',
+                blockNumber: undefined, // Fork from latest block
+            },
+            allowUnlimitedContractSize: true,
+        },
         hardhat: {
             // Need this for testing because TestHelperOz5.sol is exceeding the compiled contract size limit
             allowUnlimitedContractSize: true,

@@ -49,7 +49,7 @@ Recipient Transaction: https://testnet.bscscan.com/tx/0xbc2e6fcb09ab05722b0cc6e5
 
 ## Quick Start for Vana Network
 
-✅ **Network Status**: Vana is mainnet-only on LayerZero. Uses VANAR endpoint (40298) for simulation and deployment.
+✅ **Network Status**: Vana is mainnet-only on LayerZero. Uses ISLANDER_V2_MAINNET endpoint (30330) for deployment.
 
 ### Option 1: Run Simulation (Recommended for Testing)
 

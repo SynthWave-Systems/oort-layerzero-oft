@@ -14,7 +14,7 @@ const ethereum_mainnetContract = {
 };
 
 const vana_mainnetContract = {
-    eid: EndpointId.VANA_V2_TESTNET,
+    eid: EndpointId.ISLANDER_V2_MAINNET,
     contractName: "OORTOFTUpgradeable"
 };
 export default { 

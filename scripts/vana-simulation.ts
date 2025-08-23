@@ -22,7 +22,7 @@ async function runVanaSimulation() {
     const VANA_CONFIG = {
         networkName: 'vana-fork',
         chainId: 1480, // Vana chain ID
-        layerZeroEndpointId: EndpointId.VANA_V2_TESTNET, // Using VANAR endpoint (40298) for simulation
+        layerZeroEndpointId: EndpointId.ISLANDER_V2_MAINNET, // Vana mainnet endpoint (30330)
         rpcUrl: 'https://rpc.satori.vana.org',
         
         // These will be discovered from the forked network
@@ -172,7 +172,7 @@ async function runVanaSimulation() {
         // Test cross-chain send quote (no actual send)
         console.log('\n🌉 Testing cross-chain send quote:')
         console.log('   Destination Network: Ethereum Mainnet (EID: 30101)')
-        console.log(`   Amount: ${ethers.utils.formatEther(VANA_FORK_CONFIG.crossChainAmount)} tokens`)
+        console.log(`   Amount: ${ethers.utils.formatEther(VANA_CONFIG.crossChainAmount)} tokens`)
         
         const testRecipient = '0x742d35Cc6637C0532e1860fdE5a7C00F40c78aD7'
         const testSendParams = {
@@ -231,7 +231,7 @@ async function runVanaSimulation() {
             console.log(`✅ Upgrade Testing Complete!`)
             console.log('📝 Note: Upgrade validation passed - ready for execution when needed\n')
             
-            const upgradeResult: ForkSimulationResult = {
+            const upgradeResult: SimulationResult = {
                 success: true,
                 contractAddress: upgradeTx.toString(),
                 blockNumber: await provider.getBlockNumber()

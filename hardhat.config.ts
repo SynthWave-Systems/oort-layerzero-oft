@@ -82,17 +82,16 @@ const config: HardhatUserConfig = {
             accounts,
         },
         // Vana Network Configuration  
-        // Note: Vana network uses VANAR LayerZero endpoint ID (40298)
-        // This is for simulation purposes - actual deployment should use proper Vana mainnet
+        // Note: Vana network (formerly Islander) uses LayerZero endpoint ID 30330
         'vana-mainnet': {
-            eid: EndpointId.VANA_V2_TESTNET, // Using VANAR endpoint (40298) for Vana simulation
+            eid: EndpointId.ISLANDER_V2_MAINNET, // Vana mainnet endpoint (30330)
             url: process.env.RPC_URL_VANA_MAINNET || 'https://rpc.satori.vana.org',
             accounts,
         },
         // Vana Network Fork Configuration
         // This creates a local fork of Vana mainnet for realistic testing without gas costs
         'vana-fork': {
-            eid: EndpointId.VANA_V2_TESTNET, // Using VANAR endpoint (40298) for Vana simulation
+            eid: EndpointId.ISLANDER_V2_MAINNET, // Vana mainnet endpoint (30330)
             url: 'http://127.0.0.1:8545', // Local hardhat fork
             accounts,
             forking: {

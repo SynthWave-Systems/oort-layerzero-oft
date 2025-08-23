@@ -41,11 +41,11 @@ The simulation uses the following configuration for Vana:
 
 - **Network Name**: `vana-fork` (forked from vana-mainnet)
 - **Chain ID**: `1480` (Vana network)
-- **LayerZero Endpoint ID**: `40298` (VANA_V2_TESTNET endpoint)
+- **LayerZero Endpoint ID**: `30330` (ISLANDER_V2_MAINNET endpoint)
 - **RPC URL**: `https://rpc.satori.vana.org`
 - **Fork Mode**: Local Hardhat fork of mainnet
 
-> **Note**: The simulation uses the VANAR LayerZero endpoint (40298) as a placeholder for Vana network configuration.
+> **Note**: The simulation uses the ISLANDER_V2_MAINNET LayerZero endpoint (30330) which corresponds to the Vana network in LayerZero's infrastructure.
 
 ## Running the Simulation
 

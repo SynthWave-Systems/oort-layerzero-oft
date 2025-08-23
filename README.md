@@ -16,7 +16,7 @@ For detailed Vana integration information and configuration guidance, see [VANA_
 
 ## 🎯 Vana Network Simulation
 
-Since Vana doesn't have a testnet endpoint on LayerZero, we've created a comprehensive **deployment simulation** that allows you to test the OFT Upgradeable contract deployment and transactions without actual deployment.
+Since Vana doesn't have a testnet endpoint on LayerZero, we've created a comprehensive **deployment simulation** that uses Hardhat fork to create a local fork of Vana mainnet and performs real deployment testing without gas costs.
 
 ### Quick Simulation Commands
 
@@ -24,17 +24,18 @@ Since Vana doesn't have a testnet endpoint on LayerZero, we've created a compreh
 # View Vana network configuration
 npx hardhat vana:info
 
-# Run complete deployment simulation
+# Run deployment simulation with fork
 npx hardhat vana:simulate
 ```
 
 The simulation includes:
-- ✅ UUPS proxy deployment simulation
-- ✅ Contract interaction simulation  
-- ✅ Cross-chain transaction simulation
-- ✅ Upgrade mechanism simulation
-- ✅ Comprehensive gas estimation
-- ✅ Real deployment checklist
+- ✅ Real Vana network state via Hardhat fork
+- ✅ Actual UUPS proxy deployment
+- ✅ Real contract interactions  
+- ✅ Cross-chain transaction testing
+- ✅ Upgrade mechanism testing
+- ✅ No gas costs (local fork)
+- ✅ Real LayerZero endpoint interactions
 
 For detailed simulation documentation, see [docs/VANA_SIMULATION.md](./docs/VANA_SIMULATION.md)
 
@@ -56,7 +57,7 @@ Recipient Transaction: https://testnet.bscscan.com/tx/0xbc2e6fcb09ab05722b0cc6e5
 # Install dependencies
 yarn install
 
-# Run simulation to test deployment without actual deployment
+# Run simulation using Hardhat fork of Vana mainnet
 npx hardhat vana:simulate
 ```
 

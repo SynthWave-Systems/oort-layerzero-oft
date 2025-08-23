@@ -1,9 +1,16 @@
 import { task } from 'hardhat/config'
 
 task('vana:simulate', 'Run Vana network deployment simulation')
-    .setDescription('Simulates the deployment of OORTOFTUpgradeable contract to Vana network without actual deployment')
+    .setDescription('Uses Hardhat fork to create local Vana mainnet fork and performs real deployment testing')
     .setAction(async (taskArgs, hre) => {
-        console.log('🚀 Starting Vana Network Deployment Simulation...\n')
+        console.log('🚀 Starting Vana Network Simulation...\n')
+        
+        // Ensure we're using the vana-fork network
+        if (hre.network.name !== 'vana-fork') {
+            console.error('❌ This task must be run with --network vana-fork')
+            console.log('💡 Use: hardhat vana:simulate --network vana-fork')
+            process.exit(1)
+        }
         
         try {
             const { runVanaSimulation } = await import('../scripts/vana-simulation')
@@ -11,28 +18,6 @@ task('vana:simulate', 'Run Vana network deployment simulation')
             console.log('\n✅ Vana simulation completed successfully!')
         } catch (error) {
             console.error('\n❌ Vana simulation failed:', error)
-            process.exit(1)
-        }
-    })
-
-task('vana:fork', 'Run Vana network fork deployment simulation')
-    .setDescription('Uses Hardhat fork to create local Vana mainnet fork and performs real deployment testing')
-    .setAction(async (taskArgs, hre) => {
-        console.log('🚀 Starting Vana Network Fork Simulation...\n')
-        
-        // Ensure we're using the vana-fork network
-        if (hre.network.name !== 'vana-fork') {
-            console.error('❌ This task must be run with --network vana-fork')
-            console.log('💡 Use: hardhat vana:fork --network vana-fork')
-            process.exit(1)
-        }
-        
-        try {
-            const { runVanaForkSimulation } = await import('../scripts/vana-fork-simulation')
-            await runVanaForkSimulation()
-            console.log('\n✅ Vana fork simulation completed successfully!')
-        } catch (error) {
-            console.error('\n❌ Vana fork simulation failed:', error)
             process.exit(1)
         }
     })
@@ -54,13 +39,13 @@ task('vana:info', 'Display Vana network configuration information')
         console.log(`VANAR_TESTNET: ${EndpointId.VANAR_TESTNET}`)
         console.log(`VANAR_V2_TESTNET: ${EndpointId.VANAR_V2_TESTNET}`)
         console.log('')
-        console.log('📝 Simulation Types:')
-        console.log('• Pure Simulation: Uses mock data, no network connection')
-        console.log('• Fork Simulation: Creates local fork of Vana mainnet')
+        console.log('📝 Simulation:')
+        console.log('• Uses Hardhat fork to create local Vana mainnet fork')
+        console.log('• Performs real contract deployment and testing')
+        console.log('• No gas costs (local fork environment)')
         console.log('')
         console.log('🚀 Available Commands:')
         console.log('• npm run vana:info - Show this information')
-        console.log('• npm run vana:simulate - Run pure simulation')
-        console.log('• npm run vana:fork - Run fork simulation')
+        console.log('• npm run vana:simulate - Run simulation with fork')
         console.log('=' .repeat(40))
     })

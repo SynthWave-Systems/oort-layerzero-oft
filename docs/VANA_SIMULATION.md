@@ -41,7 +41,7 @@ The simulation uses the following configuration for Vana:
 
 - **Network Name**: `vana-fork` (forked from vana-mainnet)
 - **Chain ID**: `1480` (Vana network)
-- **LayerZero Endpoint ID**: `40298` (VANAR_V2_TESTNET endpoint)
+- **LayerZero Endpoint ID**: `40298` (VANA_V2_TESTNET endpoint)
 - **RPC URL**: `https://rpc.satori.vana.org`
 - **Fork Mode**: Local Hardhat fork of mainnet
 

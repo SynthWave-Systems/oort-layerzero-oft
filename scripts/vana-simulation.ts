@@ -22,7 +22,7 @@ async function runVanaSimulation() {
     const VANA_CONFIG = {
         networkName: 'vana-fork',
         chainId: 1480, // Vana chain ID
-        layerZeroEndpointId: EndpointId.VANAR_V2_TESTNET, // Using VANAR endpoint (40298) for simulation
+        layerZeroEndpointId: EndpointId.VANA_V2_TESTNET, // Using VANAR endpoint (40298) for simulation
         rpcUrl: 'https://rpc.satori.vana.org',
         
         // These will be discovered from the forked network

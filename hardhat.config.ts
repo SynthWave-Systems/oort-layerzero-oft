@@ -12,6 +12,7 @@ import '@nomiclabs/hardhat-ethers'
 import '@layerzerolabs/toolbox-hardhat'
 import { HardhatUserConfig, HttpNetworkAccountsUserConfig } from 'hardhat/types'
 import './tasks/sendOFT'
+import './tasks/manageFees'
 import "@openzeppelin/hardhat-upgrades";
 
 import { EndpointId } from '@layerzerolabs/lz-definitions'

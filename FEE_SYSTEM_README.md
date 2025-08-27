@@ -1,5 +1,7 @@
 # OORT LayerZero OFT Fee System
 
+> 📖 **New to basis points?** Check out our [Comprehensive Basis Points Guide](BASIS_POINTS_GUIDE.md) for detailed explanations, examples, and calculations.
+
 This repository now includes a comprehensive fee system for LayerZero Omnichain Fungible Tokens (OFT) implemented in Solidity with basis points configuration.
 
 ## Overview
@@ -123,6 +125,8 @@ fee = (amount * feeBps) / 10,000
 - Fee: 250 bp (2.5%)
 - Calculated fee: (1,000 * 250) / 10,000 = 25 tokens
 - Amount after fee: 975 tokens
+
+> 📖 **Need more details on basis points?** Check out our [Comprehensive Basis Points Guide](BASIS_POINTS_GUIDE.md) for in-depth explanations, examples, and best practices.
 
 ## Architecture
 

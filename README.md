@@ -12,3 +12,4 @@ Recipient Transaction: https://testnet.bscscan.com/tx/0xbc2e6fcb09ab05722b0cc6e5
 
 - **[Fee System Documentation](FEE_SYSTEM_README.md)** - Complete guide to the LayerZero OFT fee system
 - **[Basis Points Guide](BASIS_POINTS_GUIDE.md)** - Comprehensive guide to understanding basis points in DeFi and smart contracts
+- **[Proxy Upgrade Guide](PROXY_UPGRADE_GUIDE.md)** - Step-by-step guide to upgrade existing OFT contracts with fee functionality

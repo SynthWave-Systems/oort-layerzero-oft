@@ -29,7 +29,7 @@ const accounts: HttpNetworkAccountsUserConfig | undefined = MNEMONIC
     ? { mnemonic: MNEMONIC }
     : PRIVATE_KEY
       ? [PRIVATE_KEY]
-      : undefined
+      : ["0x0000000000000000000000000000000000000000000000000000000000000001"]
 
 if (accounts == null) {
     console.warn(
@@ -58,27 +58,27 @@ const config: HardhatUserConfig = {
         'ethereum-mainnet': {
             eid: EndpointId.ETHEREUM_V2_MAINNET,
             url: process.env.RPC_URL_MAINNET || '',
-            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [""],
+            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : ["0x0000000000000000000000000000000000000000000000000000000000000001"],
         },
         'bsc-mainnet': {
             eid: EndpointId.BSC_V2_MAINNET,
             url: process.env.RPC_URL_BSC || '',
-            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [""],
+            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : ["0x0000000000000000000000000000000000000000000000000000000000000001"],
         },
         'sepolia-testnet': {
             eid: EndpointId.SEPOLIA_V2_TESTNET,
             url: process.env.RPC_URL_SEPOLIA || '',
-            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [""],
+            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : ["0x0000000000000000000000000000000000000000000000000000000000000001"],
         },
         'bsc-testnet': {
             eid: EndpointId.BSC_V2_TESTNET,
             url: process.env.RPC_URL_BSC || 'https://data-seed-prebsc-2-s1.bnbchain.org:8545',
-            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [""],
+            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : ["0x0000000000000000000000000000000000000000000000000000000000000001"],
         },
         'amoy-testnet': {
             eid: EndpointId.AMOY_V2_TESTNET,
             url: process.env.RPC_URL_AMOY || '',
-            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [""],
+            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : ["0x0000000000000000000000000000000000000000000000000000000000000001"],
         },
         hardhat: {
             // Need this for testing because TestHelperOz5.sol is exceeding the compiled contract size limit

@@ -7,3 +7,9 @@ https://testnet.layerzeroscan.com/tx/0x36c6378087e5c621e181d41ab7e6df8bc41ed46a3
 Origin Transaction: https://sepolia.etherscan.io/tx/0x36c6378087e5c621e181d41ab7e6df8bc41ed46a37a38cc629928b3ace272192
 
 Recipient Transaction: https://testnet.bscscan.com/tx/0xbc2e6fcb09ab05722b0cc6e50635929cad750b7320adfaad5952544cc0d65fcc
+
+## 📚 Documentation
+
+- **[Fee System Documentation](FEE_SYSTEM_README.md)** - Complete guide to the LayerZero OFT fee system
+- **[Basis Points Guide](BASIS_POINTS_GUIDE.md)** - Comprehensive guide to understanding basis points in DeFi and smart contracts
+- **[Proxy Upgrade Guide](PROXY_UPGRADE_GUIDE.md)** - Step-by-step guide to upgrade existing OFT contracts with fee functionality

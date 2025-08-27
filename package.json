@@ -18,7 +18,7 @@
   },
   "resolutions": {
     "ethers": "^5.7.2",
-    "hardhat-deploy": "^0.12.1"
+    "hardhat-deploy": "^0.14.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
@@ -67,12 +67,12 @@
   "pnpm": {
     "overrides": {
       "ethers": "^5.7.2",
-      "hardhat-deploy": "^0.12.1"
+      "hardhat-deploy": "^0.14.0"
     }
   },
   "overrides": {
     "ethers": "^5.7.2",
-    "hardhat-deploy": "^0.12.1"
+    "hardhat-deploy": "^0.14.0"
   },
   "dependencies": {
     "@layerzerolabs/lz-evm-sdk-v2": "^3.0.75",
